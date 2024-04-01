@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>HiDiffusion</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title">HiDiffusion: Unlocking Higher-Resolution Creativity and Efficiency in Pretrained Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Shen Zhang<sup>1</sup>,</span>
+                <span class="author-block">
+                  Zhaowei Chen<sup>1</sup>,</span>
+                  <span class="author-block">
+                    Zhenyu Zhao<sup>1</sup>,</span>
+                    <span class="author-block">
+                      Yuhao Chen<sup>2</sup>,</span>
+                      <span class="author-block">
+                        Yuhao Chen<sup>2</sup>,</span>
+                        <span class="author-block">
+                          Yao Tang<sup>1</sup>,</span>
+                            <span class="author-block">
+                              Jiajun Liang<sup>1</sup><sup>*</sup></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>MEGVII Technology, 
+                      <sup>2</sup>ByteDance
+                       <!-- <br>Conferance name and year</span> -->
+                    <span class="eql-cntrb"><br><sup>*</sup>Indicates corresponding author</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2311.17528.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2311.17528" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/ShenZhang-Shin/HiDiffusion" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                  <span class="link-block">
+                    <a href="https://colab.research.google.com/drive/1EiBn9lSnPZTU4cikRRaBBexs429M-qty#scrollTo=D1zPtemFFbfV" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-coffee"></i>
+                    </span>
+                    <span>Colab Demo</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+    <div class="container">
+      <h2 class="title is-4" style="margin-top:-40px">A training-free method that increases the resolution and</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/sdxl_113_intricately detailed, samurai meditating by a serene reflection pool, feudal japan, intense.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+            SDXL, 2048x2048. Intricately detailed, samurai meditating by a serene reflection pool, feudal japan, intense, vivid complementary colors, beautiful linework, octane render, professional concept art by jonathan hickman, miyamoto mushashi, ghibli, alphonse mucha, reads, ross tran, rutkowski, grenier, octane render, marvel, dc, dnd.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Standing tall amidst the ruins, a stone golem awakens, vines.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+            SDXL, 2048x2048. Standing tall amidst the ruins, a stone golem awakens, vines and flowers sprouting from the crevices in its body.
+          </h2>
+        </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/370_seed_8_cost_time_54.32_Echoes of a forgotten song drift.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL, 2048x2048. Echoes of a forgotten song drift across the moonlit sea, where a ghost ship sails, its spectral crew bound to an eternal quest for redemption.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/457_seed_17005_cost_time_91.42_adorable concept illustration of a plush animal peacefully sitting on .jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL, 2048x3072. Adorable concept illustration of a plush animal peacefully sitting on a child’s bed, soft lighting, gentle texture, dreamy atmosphere, pastel tones, matte finish, wide shot, by Yuko Shimizu.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/An ancient tree spirit emerging from the heart of a primeval forest.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL, 2048x3072. An ancient tree spirit emerging from the heart of a primeval forest, its bark-like skin etched with runes, moss and vines entwining its limbs, and eyes that glow with the wisdom of centuries.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/thick strokes, bright colors, an exotic fox, cute, chibi kawaii. detailed fur, hyperdetailed , big reflective eyes, fairytale, artstation,centered composition, perfect composition, centered, vib.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL, 4096x4096. Thick strokes, bright colors, an exotic fox, cute, chibi kawaii. detailed fur, hyperdetailed , big reflective eyes, fairytale, artstation,centered composition, perfect composition, centered, vibrant colors, muted colors, high detailed, 8k.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/output_501_glamorous and sexy wet Rena Rounen aka Nano in sumptuous blouse, beautiful, pearlescent skin, natura_101.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL-Turbo, 1024x1024. Glamorous and sexy wet Rena Rounen aka Nano in sumptuous blouse, beautiful, pearlescent skin, natural beauty, seductive eyes and face, elegant girl, natural beauty, very detailed face, seductive lady, full body portrait, natural lights, photorealism, summer vibrancy, cinematic, a portrait by artgerm, rossdraws, Norman Rockwell, magali villeneuve, Gil Elvgren, Alberto Vargas, Earl Moran, Enoch Bolles.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/output_445_rabbit as a hitman, dynamic lighting, fantasy concept art, trending on art station, stunning visuals, creative, cinematic, ultra detailed, comic strip style_74.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SDXL-Turbo, 1024x1024. rabbit as a hitman, dynamic lighting, fantasy concept art, trending on art station, stunning visuals, creative, cinematic, ultra detailed, comic strip style.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/output_2_portrait of a beautiful girl with dark hair dressed in 1940's fashion, park background, rich vivid c_5.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SD 2.1, 1024x1024. Portrait of a beautiful girl with dark hair dressed in 1940's fashion, park background, rich vivid colors, ambient lighting, dynamic lighting, 4k, official media, anime key visual, makoto shinkai, ilya kuvshinov, lois van baarle, rossdraws, detailed, trending on artstation.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/sd21_647_seed_11405_cost_time_43.32_A regal corgi sitting on a velvet throne, adorned with a.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SD 2.1, 2048x2048. A regal corgi sitting on a velvet throne, adorned with a tiny golden crown and a royal purple cloak, surveying its kingdom with a benevolent gaze from a grand castle hall. comic style, animation.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/output_32_Waves crash against a rocky shore where a lighthouse stands tall, its beacon shines in the starry ni_9.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SD 1.5, 1024x1024. Waves crash against a rocky shore where a lighthouse stands tall, its beacon shines in the starry night.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/output_82_Arcane style highly detailed matte painting stylized three quarters portrait of an anthropomorphic r_106.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom:20px">
+          SD 1.5, 2048x2048. Arcane style highly detailed matte painting stylized three quarters portrait of an anthropomorphic rugged happy fox with sunglasses! head animal person, background blur bokeh, high detail, muted color, 8k.
+       </h2>
+     </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section hero">
+<div class="columns is-centered has-text-centered">
+<div class="container is-max-desktop">
+  <h2 class="title is-4" style="margin-top:-40px">speed without compromising image quality of Stable Diffusion.</h2>
+  <img src="static/images/efficiency_owl.jpg" alt="MY ALT TEXT"/>
+  SDXL, 2048x3072. In the depths of a mystical forest, a robotic owl with night vision lenses for eyes watches over the nocturnal creatures.
+  <img src="static/images/efficiency.jpg" alt="MY ALT TEXT"/>
+  <!-- <img src="static/images/gif_sd_panda.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_md_panda.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_hi_panda.gif" width=300px alt="MY ALT TEXT"/> -->
+<!-- </div>
+<div class="container is-max-desktop"> -->
+  <!-- <img src="static/images/gif_sd.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_md.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_hi.gif" width=300px alt="MY ALT TEXT"/>
+
+  <img src="static/images/gif_sd_car.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_md_car.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_hi_car.gif" width=300px alt="MY ALT TEXT"/>
+  <h2 class="subtitle has-text-centered">
+    1024x1024, Left: Stable Diffusion, Mid: MultiDiffusion, Right: HiDiffusion. <p> HiDiffusion is 1.7x faster than Stable Diffusion and 30x faster than MultiDiffusion.
+  </h2>
+
+  <img src="static/images/gif_sd_cat.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_md_cat.gif" width=300px alt="MY ALT TEXT"/>
+  <img src="static/images/gif_hi_cat.gif" width=300px alt="MY ALT TEXT"/>
+  <h2 class="subtitle has-text-centered"> -->
+    SDXL, 2048x4096. Autumn season, a serene mountain lake  lies beside a mountain. The leaves are yellow, the blue sky with fluffy clouds adds to the tranquility of the landscape.
+  </h2>
+</div>
+</div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models have become a mainstream approach for high-resolution image synthesis. However,  directly generating <b>higher-resolution</b> images from pretrained diffusion models will encounter unreasonable object duplication and exponentially increase the generation time. In this paper, we discover that object duplication arises from feature duplication in the deep blocks of the U-Net.  Concurrently, We pinpoint the extended generation times to self-attention redundancy in U-Net's top blocks. To address these issues, we propose a tuning-free higher-resolution framework named HiDiffusion. Specifically, HiDiffusion contains Resolution-Aware U-Net~(RAU-Net) that dynamically adjusts the feature map size to resolve object duplication and engages Modified Shifted Window Multi-head Self-Attention(MSW-MSA) that utilizes optimized window attention to reduce computations. 
+            we can integrate HiDiffusion into various pretrained diffusion models to scale image generation resolutions even to 4096×4096 at 1.5-6× the inference speed of previous methods. Extensive experiments demonstrate that our approach can address object duplication and heavy computation issues, achieving state-of-the-art performance on higher-resolution image synthesis tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/framework.jpg" alt="MY ALT TEXT"/>
+            <h2 class="subtitle has-text-centered">
+              HiDiffusion framework.
+            </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="columns is-centered has-text-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">
+      Comparison with SOTAs
+    </h2>
+    <img src="static/images/example_comparasion_1.jpg" alt="MY ALT TEXT"/>
+    2048x2048. An Astronaut in space playing an electric guitar, stylistic, cinematic, earth visible in the background.
+    <img src="static/images/example_comparasion_2.jpg" alt="MY ALT TEXT"/>
+      2048x2048. Girl with pink hair, vaporwave style, retro aesthetic, cyberpunk, vibrant, neon colors, vintage 80s and 90s style, highly detailed.
+    <img src="static/images/example_comparasion_3.jpg" alt="MY ALT TEXT"/>
+    2048x3072. Roger rabbit as a real person, photorealistic, cinematic.
+    <img src="static/images/example_comparasion_4.jpg" alt="MY ALT TEXT"/>
+    2048x4096. An otherworldly forest with bioluminescent trees, their neon blue leaves casting an ethereal glow on the path below, and curious creatures with gentle eyes peering from behind the glowing trunks.
+    <img src="static/images/example_comparasion_5.jpg" alt="MY ALT TEXT"/>
+    4096x4096. An adorable happy brown border collie sitting on a bed, high detail.
+    </h2>
+    <img src="static/images/example_comparasion_6.jpg" alt="MY ALT TEXT"/>
+    4096x4096. Standing tall amidst the ruins, a stone golem awakens, vines and flowers sprouting from the crevices in its body.
+    </h2>
+  </div>
+  </div>
+  </section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{zhang2023hidiffusion,
+        title={HiDiffusion: Unlocking High-Resolution Creativity and Efficiency in Low-Resolution Trained Diffusion Models},
+        author={Zhang, Shen and Chen, Zhaowei and Zhao, Zhenyu and Chen, Zhenyuan and Tang, Yao and Chen, Yuhao and Cao, Wengang and Liang, Jiajun},
+        journal={arXiv preprint arXiv:2311.17528},
+        year={2023}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
